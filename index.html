@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>LEGO Set</title>
+    <link rel="icon" href="https://tr.rbxcdn.com/db77b8aa749f34f9f3666a4761cae550/420/420/Decal/Png">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="teclas">
+        <div data-key="65" class="tecla">
+            <kbd>A</kbd>
+            <span class="sound">Darth Vader</span>
+            <img src="images/darthVader.jpg" id="icon">
+        </div>
+        <div data-key="83" class="tecla">
+            <kbd>S</kbd>
+            <span class="sound">Stormtrooper</span>
+            <img src="images/stormtrooper.jpg" id="icon">
+        </div>
+        <div data-key="68" class="tecla">
+            <kbd>D</kbd>
+            <span class="sound">&nbsp; Yoda &nbsp;</span>
+            <img src="images/yoda.jpg" id="icon">
+        </div>
+        <div data-key="70" class="tecla">
+            <kbd>F</kbd>
+            <span class="sound">Arturito</span>
+            <img src="images/arturito.jpg" id="icon">
+        </div>
+        <div data-key="71" class="tecla">
+            <kbd>G</kbd>
+            <span class="sound">Obi-Wan</span>
+            <img src="images/obiwan.jpg" id="icon">
+        </div>
+        <div data-key="72" class="tecla">
+            <kbd>H</kbd>
+            <span class="sound">&nbsp; Luke &nbsp;</span>
+            <img src="images/luke.jpg" id="icon">
+        </div>
+        <div data-key="74" class="tecla">
+            <kbd>J</kbd>
+            <span class="sound">&nbsp; Ewok &nbsp;</span>
+            <img src="images/ewok.jpg" id="icon">
+        </div>
+        <div data-key="75" class="tecla">
+            <kbd>K</kbd>
+            <span class="sound">Jar Jar</span>
+            <img src="images/jarjar.jpg" id="icon">
+        </div>
+        <div data-key="76" class="tecla">
+            <kbd>L</kbd>
+            <span class="sound">&nbsp; Jawa &nbsp;</span>
+            <img src="images/jawa.jpg" id="icon">
+        </div>
+        <div data-key="77" class="tecla">
+            <kbd>M</kbd>
+            <span class="sound">&nbsp; C3P0 &nbsp;</span>
+            <img src="images/cepo.jpg" id="icon">
+        </div>
+        <div data-key="78" class="tecla">
+            <kbd>N</kbd>
+            <span class="sound">Palpatine</span>
+            <img src="images/palpatine.jpg" id="icon">
+        </div>
+
+
+    </div>
+
+    <audio data-key="65" src="sounds/darthVader.wav"></audio>
+    <audio data-key="83" src="sounds/Stormtrooper.wav"></audio>
+    <audio data-key="68" src="sounds/Yoda.wav"></audio>
+    <audio data-key="70" src="sounds/R2D2.wav"></audio>
+    <audio data-key="71" src="sounds/Obi-Wans.wav"></audio>
+    <audio data-key="72" src="sounds/Luke.wav"></audio>
+    <audio data-key="74" src="sounds/Ewok.wav"></audio>
+    <audio data-key="75" src="sounds/Jar_Jar_Binks.wav"></audio>
+    <audio data-key="76" src="sounds/Jawa.wav"></audio>
+    <audio data-key="77" src="sounds/C3P0.wav"></audio>
+    <audio data-key="78" src="sounds/Emperor_Palpatine.wav"></audio>
+
+
+
+
+
+
+    <script>
+        function removeTransition(e) {
+            if (e.propertyName !== 'transform') return;
+            e.target.classList.remove('playing');
+        }
+
+        function playSound(e) {
+            const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`);
+            const key = document.querySelector(`div[data-key="${e.keyCode}"]`);
+            if (!audio) return;
+
+            key.classList.add('playing');
+            audio.currentTime = 0;
+            audio.play();
+        }
+
+        const teclas = Array.from(document.querySelectorAll('.tecla'));
+        teclas.forEach(tecla => tecla.addEventListener('transitionend', removeTransition));
+        window.addEventListener('keydown', playSound);
+    </script>
+
+
+</body>
+</html>

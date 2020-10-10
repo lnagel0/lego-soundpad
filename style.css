@@ -1,0 +1,60 @@
+html {
+    background: url(https://www.wsgf.org/f/u/imagecache/node-gallery-display/contrib/dr/364/ingame_16x9_0.jpg);
+    background-size: cover;
+    font-size: 10px;
+}
+
+kbd {
+    display: block;
+    font-size: 4rem;
+}
+
+body,html {
+    font-family: monospace;
+    margin: 0;
+    padding: 0;
+}
+
+.teclas {
+    display: flex;
+    flex: 1;
+    min-height: 100vh;
+    align-items: center;
+    justify-content: center;
+    vertical-align: center;
+}
+
+.tecla {
+    border: .4rem black;
+    border-radius: .5rem;
+    margin: 1rem;
+    font-size: 1.5rem;
+    padding: 3vh 1vh 6.5vh;
+    transition: all .07s ease;
+    width: 10rem;
+    height: 10rem;
+    text-align: center;
+    color: white;
+    background: rgba(0,0,0,0.4);
+    text-shadow: 0 0 .5rem black;
+    vertical-align: center;
+}
+
+.playing {
+    transform: scale(1.1);
+    border-color: #0040ff;
+    box-shadow: 0 0 1rem #00288d;
+}
+
+.sound {
+    color: #007bff;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    letter-spacing: .1rem;
+}
+
+#icon {
+    padding-top: 1vh;
+    width: 7vh;
+    height: 7vh;
+}
